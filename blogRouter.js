@@ -24,7 +24,7 @@ router.post('/', jsonParser, (req, res) => {
 		}
 	}
 	const item = BlogPosts.create(req.body.title, req.body.content, req.body.author, req.body.puslishDate);
-	res.status(201).json(item);
+	res.status(200).json(item);
 });
 
 router.delete('/:id', (req, res) => {
@@ -53,7 +53,7 @@ router.put('/:id', jsonParser, (req, res) => {
 		author : req.body.author,
 		publishDate : req.body.publishDate
 	});
-	res.status(204).end();
+	res.status(200).json(updateItem);
 });
 
 
